@@ -113,6 +113,8 @@ unique(edx$rating)
 unique(edx$genres)
 # Returns 797 unique combinations. Needs refactoring
 
+# Movies rating distribution visulization
+
 edx %>% 
   count(movieId) %>% 
   ggplot(aes(n)) + 
@@ -120,4 +122,18 @@ edx %>%
   scale_x_log10() + 
   ggtitle("Rated Movies")
 
+# Rating distribution for test segment
+edx %>% 
+  ggplot(aes(rating)) + 
+  geom_histogram(binwidth=0.2, color="darkblue", fill="lightblue") + 
+  ggtitle("Rating Distribution (Training")
+
+# Rating distribution for validation segment
+
+validation %>% 
+  ggplot(aes(rating)) + 
+  geom_histogram(binwidth=0.2, color="darkblue", fill="lightblue") +  
+  ggtitle("Rating Distribution (Validation")
+
+# Both test and validation segment have very similar rating distribution.
 
