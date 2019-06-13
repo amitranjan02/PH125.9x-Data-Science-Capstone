@@ -989,6 +989,7 @@ fits <- lapply(models, function(model){
 }) 
     
 names(fits) <- models
+fits
 ```
 
 ## Other Techniques
